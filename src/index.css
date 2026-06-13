@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+    font-size: 17px;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply w-full rounded-2xl bg-blue-600 py-4 text-lg font-bold text-white active:bg-blue-700 transition-colors;
+  }
+
+  .btn-danger {
+    @apply rounded-xl bg-danger/20 px-4 py-3 text-base font-bold text-danger active:bg-danger/30 transition-colors min-w-[90px];
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border border-gray-700 bg-gray-800 px-5 py-4 text-lg text-white placeholder-gray-500 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition-colors;
+  }
+}
